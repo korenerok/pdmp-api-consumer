@@ -48,7 +48,8 @@ const handleActivePageNumber = () => {
 
 const appendPageNumber = (index) => {
   const pageNumber = document.createElement("button");
-  pageNumber.className = "pagination-number";
+  pageNumber.className = "pagination-number ";
+ 
   pageNumber.innerHTML = index;
   pageNumber.setAttribute("page-index", index);
   pageNumber.setAttribute("aria-label", "Page " + index);

@@ -8,6 +8,9 @@ $key = $envVariables['KEYFILE'];
 
 include_once('xml.php');
 
+
+
+
 $xmlFile = tempnam(sys_get_temp_dir(), 'xml');
 file_put_contents($xmlFile, $xml);
 
@@ -20,16 +23,17 @@ $curlCommand .= "$Url";
 // Execute the curl command
 $response = shell_exec($curlCommand);
 
+
+
 $xmlstring = simplexml_load_string($response);
 
 
 
 $patientInfo = $xmlstring->Body->RxHistoryResponse->Patient;
+
 $medicationDispensed = $xmlstring->Body->RxHistoryResponse->MedicationDispensed;
 
-// $medicationByPage = 25;
-// $totalMedicationList = count($medicationDispensed );
-// $totalPages = ceil($totalMedicationList / $medicationByPage);
+
 
 
 

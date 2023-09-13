@@ -49,7 +49,10 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($medicationDispensed  as $value) { ?>
+      <?php 
+        $medicationDispensed = 
+        foreach ($medicationDispensed  as $value) { 
+        ?>
         <tr  class="text-center">
           
           <td><?php echo(!empty($value->DrugDescription) ? $value->DrugDescription  : "-")  ?></td>

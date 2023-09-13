@@ -6,7 +6,9 @@ $Url = $envVariables['URL'];
 $cert = $envVariables['CERTFILE'];
 $key = $envVariables['KEYFILE'];
 
-include_once('xml.php');
+
+
+include_once('./xml.php');
 
 
 
@@ -20,12 +22,15 @@ $curlCommand .= "--cert $cert --key $key ";
 $curlCommand .= "-d @$xmlFile ";
 //$curlCommand .= "-d @recond_request.xml ";
 $curlCommand .= "$Url";
+
+
 // Execute the curl command
 $response = shell_exec($curlCommand);
 
 
 
 $xmlstring = simplexml_load_string($response);
+
 
 
 

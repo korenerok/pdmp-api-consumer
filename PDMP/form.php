@@ -6,7 +6,7 @@
     <h2>PDMP project</h2>
   
       <p>Data of the pacient</p>
-      <form class="row g-3" action="result.php" method="POST" id="form">
+      <form class="row g-3" action="getData.php" method="GET" id="form">
         <div class="col-md-6">          
           <label for="patient_first_name" class="form-label">First name</label>
           <input type="text" class="form-control" id="patient_first_name" name="patient_first_name" >

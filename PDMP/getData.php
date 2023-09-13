@@ -1,4 +1,4 @@
-<?php include_once('process.php')?>
+<?php include_once('./process.php')?>
 
 
 <?php include('./assets/head.php') ?>
@@ -50,7 +50,7 @@
       </thead>
       <tbody>
       <?php 
-        $medicationDispensed = 
+        
         foreach ($medicationDispensed  as $value) { 
         ?>
         <tr  class="text-center">

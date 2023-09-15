@@ -82,8 +82,22 @@ const setCurrentPage = (pageNum) => {
   });
 };
 
+const setClassForYearPagination = () => {
+  currentYear=new Date().getFullYear();
+  listItems.forEach((item) => {
+    fillDate=item.querySelector(".filldate").textContent;
+    itemDate=Date.parse(fillDate);    
+    if(!isNaN(itemDate)){
+      itemDate=itemDate.getFullYear();
+      pageNumber= 1+ (currentYear-itemDate);
+      item.classList.add(`page${pagenumber}`);
+    }
+  });
+}
+
 
 window.addEventListener("load", () => {
+  setClassForYearPagination();
   getPaginationNumbers();
   setCurrentPage(1);
 

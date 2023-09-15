@@ -59,7 +59,7 @@
 
           <td><?php echo(!empty($value->Pharmacy->Address->State) ? $value->Pharmacy->Address->State  : "-")  ?></td>
 
-          <td><?php echo(!empty($value->LastFillDate->Date) ? date("m-d-Y",strtotime($value->LastFillDate->Date))  : "-")  ?></td>
+          <td class="filldate"><?php echo(!empty($value->LastFillDate->Date) ? date("m-d-Y",strtotime($value->LastFillDate->Date))  : "-")  ?></td>
 
           <td><?php echo(!empty($value->WrittenDate->Date) ? date("m-d-Y",strtotime($value->WrittenDate->Date )) : "-")  ?></td>     
           

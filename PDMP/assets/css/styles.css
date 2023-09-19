@@ -37,3 +37,6 @@ padding: 20px 0;
 .medication{
 cursor:pointer;
 }
+.filled{
+  width:130px;
+}

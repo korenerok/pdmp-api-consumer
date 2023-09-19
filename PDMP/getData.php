@@ -32,7 +32,7 @@
         <tr class="text-center table-header">
           <th scope="col">Medication</th>
           <th scope="col">State</th>
-          <th scope="col">Date Filled</th>
+          <th scope="col" style="width: 112px;">Date Filled</th>
           <th scope="col">Date Written</th>
           <th scope="col">Date Supply</th>
           <th scope="col">Quatity Dispensed </th>
@@ -53,7 +53,7 @@
 
           <td><?php echo(!empty($value->Pharmacy->Address->State) ? $value->Pharmacy->Address->State  : "-")  ?></td>
 
-          <td><?php echo(!empty($value->LastFillDate->Date) ? $value->LastFillDate->Date  : "-")  ?></td>
+          <td ><?php echo(!empty($value->LastFillDate->Date) ? $value->LastFillDate->Date  : "-")  ?></td>
 
           <td><?php echo(!empty($value->WrittenDate->Date) ? $value->WrittenDate->Date : "-")  ?></td>
 

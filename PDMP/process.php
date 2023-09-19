@@ -1,18 +1,5 @@
 <?php
 
-// //conexion 
-// $server = "localhost";
-// $username = "root";
-// $password = 'clon.21079951';
-// $database = 'pdmp';
-// $db = mysqli_connect($server, $username, $password, $database);
-
-// mysqli_query($db, "SET NAMES 'utf8'");
-
-// //inciamo session 
-// if(!isset($_SESSION)){
-//   session_start();
-// }
 
 
 
@@ -21,10 +8,37 @@ $Host = $envVariables['HOST_NAME'];
 $Url = $envVariables['URL'];
 $cert = $envVariables['CERTFILE'];
 $key = $envVariables['KEYFILE'];
+$server = $envVariables['DBSERVER'];
+$username = $envVariables['DBUSER'];
+$password = $envVariables['DBPASS'];
+$database = $envVariables['DBNAME'];
+$db = mysqli_connect($server, $username, $password, $database);
+// include_once('./assets/conection.php');
 
+if($_GET['user'] && $_GET['patientID']){
+  $user = $_GET['user'];
+  $patient = $_GET['patientID'];
+  $query = "INSERT INTO logs (PatientID, UserID) VALUES('$user', '$patient')";
+  $save = mysqli_query($db, $query);  
+
+  if ($save){
+    $sql = "SELECT id, Date, Time FROM logs ORDER BY id DESC LIMIT 1";
+    $result=mysqli_query($db,$sql);
+    $result=mysqli_fetch_assoc($result);
+    $messageID = $result['id'];
+    $date = $result['Date'];
+    $time = $result['Time'];
+  }
+
+
+}else {
+  
+}
 
 
 include_once('./xml.php');
+
+
 
 
 
@@ -60,37 +74,6 @@ $error = $xmlstring->Body->Error;
 
 
 
-if($medicationDispensed){
-  $datos = [];
-
-  foreach ($medicationDispensed  as $value) {
-    $dato = [
-      "medication" => !empty($value->DrugDescription) ? $value->DrugDescription  : "-",
-
-      "state" => !empty($value->Pharmacy->Address->State) ? $value->Pharmacy->Address->State  : "-",
-
-
-      "date_filled" => !empty($value->LastFillDate->Date) ? date("m-d-Y",strtotime($value->LastFillDate->Date))  : "-",
-
-      "days_written" => !empty($value->WrittenDate->Date) ? date("m-d-Y",strtotime($value->WrittenDate->Date)) : "-",
-      
-      "day_supply" => !empty($value->DaysSupply) ? $value->DaysSupply  : "-",
-
-      "quantity_dispensed" =>!empty($value->Quantity->Value) ? $value->Quantity->Value  : "0", 
-
-      "refills_remaining" => !empty($value->Refills->Value) ? $value->Refills->Value  : "0",
-
-      "prescriber" =>!empty($value->Prescriber->Name->FirstName) &&!empty($value->Prescriber->Name->LastName)  ? $value->Prescriber->Name->FirstName.' '. $value->Prescriber->Name->LastName : "-",
-
-      "pharmacy_name " => !empty($value->Pharmacy->StoreName) ? $value->Pharmacy->StoreName  : "-"
-
-    ];
-
-    $datos[] = $dato;
-
-  }
-
-}
 
 
 

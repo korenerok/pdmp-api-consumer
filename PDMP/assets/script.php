@@ -3,36 +3,26 @@
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.js"></script>
 <script src="https://cdn.datatables.net/colreorder/1.7.0/js/dataTables.colReorder.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/anti-the.js"></script>
-<<<<<<< HEAD
-=======
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
->>>>>>> origin
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 
 <script>
 $(document).ready(function() {
 
-<<<<<<< HEAD
+//  DataTable.datetime('YYYY-MM-DD');
 
-
- var table = $('#table').DataTable( {
- /*  "columnDefs": [
-    { "orderData": [ 1, 1 ],    "targets": 2},
-    { "orderData": [1, 1], "targets": 0 },
-  ], */
-
-  order: [[2, 'desc']]
-});
-=======
   var table = $('#table').DataTable( {
+    /*  "columnDefs": [
+      { "orderData": [ 1, 1 ],    "targets": 2},
+      { "orderData": [1, 1], "targets": 0 },
+    ], */
     columnDefs:[{
       targets:[2,3],
       render: DataTable.render.datetime('MMM Do YYYY')
     }],
     order: [[2, 'desc']]
   });
->>>>>>> origin
 
 
 

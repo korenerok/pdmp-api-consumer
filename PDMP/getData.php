@@ -9,7 +9,7 @@
   <div class="container-sm">
     <div class="row">
       <div class="col">
-
+        
         <h1>Patient Information:</h1>
         <br><strong>Name: </strong> <?php echo($patientInfo->Name->FirstName) ?></br>
         <strong>Last Name: </strong> <?php echo($patientInfo->Name->LastName) ?></br>

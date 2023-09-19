@@ -9,24 +9,26 @@
   <div class="container-sm">
     <div class="row">
       <div class="col">
-        <a href="#">Username: <?php echo($_GET['user']) ?></a>
         <h1>Patient Information:</h1>
         <br><strong>Name: </strong> <?php echo($patientInfo->Name->FirstName) ?></br>
         <strong>Last Name: </strong> <?php echo($patientInfo->Name->LastName) ?></br>
-        <strong>Date of birth: </strong> <?php echo(date("m-d-Y",strtotime($patientInfo->DateOfBirth->Date))) ?></br>
-        <strong>Address: </strong> <?php echo($patientInfo->Address->AddressLine1.', '.$patientInfo->Address->City.', '.$patientInfo->Address->State .', '.$patientInfo->Address->ZipCode)   ?></br> 
+      <strong>Date of birth: </strong> <?php echo($patientInfo->DateOfBirth->Date) ?></br>
+        <strong>Address: </strong> <?php echo($patientInfo->Address->AddressLine1.', '.$patientInfo->Address->City.', '.$patientInfo->Address->State .', '.$patientInfo->Address->ZipCode)   ?></br>
         <strong>Gender: </strong>
           <?php echo( $patientInfo->Gender == "M" ? 'Male': ($patientInfo->Gender == "F" ? 'Female' : "-")) ?>
         </p>
 
       </div>
     </div>
-    
 
-     
-  
 
-    <div>
+
+
+
+
+
+
+  <div>
     <table class="table table-striped table-bordered" id="table">
       <thead>
         <tr class="text-center table-header">
@@ -91,28 +93,10 @@
 
 
   </div>
- 
-  <?php } ?>  
-  
 
-  <?php if($error) { ?>
-    <div class="container-sm">
-      <div class="row">
-        <div class="col">
-          <h1>Error:</h1>
-          
-          <p><br> <?php echo($error->Code) ?> 
-           <?php echo( $error->Description) ?></br>
-          
-          </p>
 
-        </div>
-      </div>
-    </div>
-
-    <?php } ?>  
   <?php include('./assets/script.php') ?>
-  
+  <?php } ?>
 </body>
 
 </html>

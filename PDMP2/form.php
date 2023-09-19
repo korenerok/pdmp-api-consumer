@@ -1,28 +1,19 @@
 <?php include('./assets/head.php') ?>
 <body>
-  
-  
+
+
   <div class="container-md" id="container-form">
     <h2>PDMP project</h2>
-  
+
       <p>Data of the pacient</p>
       <form class="row g-3" action="getData.php" method="GET" id="form">
-        <div class="col-md-6">          
-            <label for="npi" class="form-label">NPI</label>
-            <input type="text" class="form-control" id="npi" name="npi" >
-        </div>
-        <div class="col-md-6">          
-            <label for="npi" class="form-label">User</label>
-            <input type="text" class="form-control" id="user" name="user" >
-        </div>  
-
-        <div class="col-md-6">          
-          <label for="fname" class="form-label">First name</label>
-          <input type="text" class="form-control" id="fname" name="fname" >
+        <div class="col-md-6">
+          <label for="patient_first_name" class="form-label">First name</label>
+          <input type="text" class="form-control" id="patient_first_name" name="patient_first_name" >
         </div>
         <div class="col-md-6">
-          <label for="lname" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="plname" name="lname">
+          <label for="patient_last_name" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="patient_last_name" name="patient_last_name">
         </div>
 
         <div class="col-md-6">
@@ -31,20 +22,20 @@
           <option selected>Select a Gender</option>
           <option value="M">Male</option>
           <option value="F">Female</option>
-          
+
         </select>
         </div>
 
         <div class="col-md-6">
-          <label for="dob" class="form-label">Date of birth</label>
-          <input type="date" class="form-control" id="dob"  name="dob" value="<?php echo date('Y-m-d'); ?>">
+          <label for="date_of_birth" class="form-label">Date of birth</label>
+          <input type="date" class="form-control" id="date_of_birth"  name="date_of_birth" value="<?php echo date('Y-m-d'); ?>">
         </div>
 
         <div class="col-md-12">
           <label for="address" class="form-label">Address</label>
           <input type="text" class="form-control" id="address" name="address">
         </div>
-        
+
 
         <div class="col-md-3">
           <label for="city" class="form-label">City</label>
@@ -83,7 +74,7 @@
           <option selected>Select a option</option>
           <option value="Y">Yes</option>
           <option value="N">No</option>
-          
+
         </select>
         </div>
 
@@ -92,12 +83,12 @@
 
         </div>
 
-        
-      </form>  
 
-    
+      </form>
+
+
 </div>
-  
+
   <?php include('./assets/script.php') ?>
 </body>
 </html>
